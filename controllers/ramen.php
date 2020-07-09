@@ -9,10 +9,14 @@
       $objectBody = json_decode($reqBody);
       $orderUpdt = new Order(
           $_REQUEST['id'],
-          $objectBody->guest,
-          $objectBody->typeoframen,
-          $objectBody->toppings
-        );
+          $objectBody->ingredient1,
+          $objectBody->ingredient2,
+          $objectBody->ingredient3,
+          $objectBody->ingredient4,
+          $objectBody->ingredient5,
+          $objectBody->ingredient6,
+          $objectBody->ingredient7,
+          $objectBody->ingredient8);
       $allOrders = Orders::update($orderUpdt);
       echo json_encode($allOrders);
     }
