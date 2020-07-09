@@ -29,27 +29,16 @@ class Order {
     public $ingredient7;
     public $ingredient8;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  public function __construct($id, $guest, $typeoframen, $toppings) {
-=======
   public function __construct($id, $ingredient1, $ingredient2, $ingredient3, $ingredient4, $ingredient5, $ingredient6, $ingredient7, $ingredient8) {
->>>>>>> dc4c9e2a8330f5697f627f7313d320e5648623ac
-=======
-
-
-
-  public function __construct($id, $ingredient1, $ingredient2, $ingredient3, $ingredient4, $ingredient5, $ingredient6, $ingredient7, $ingredient8) {
->>>>>>> 6fdb55574aa19c46e5158c7ef13cb0662f8cba2e
       $this->id = $id;
       $this->ingredient1  = $ingredient1;
-      $this->$ingredient2 = $ingredient2;
-      $this->$ingredient3 = $ingredient3;
-      $this->$ingredient4 = $ingredient4;
-      $this->$ingredient5 = $ingredient5;
-      $this->$ingredient6 = $ingredient6;
-      $this->$ingredient7 = $ingredient7;
-      $this->$ingredient8 = $ingredient8;
+      $this->ingredient2 = $ingredient2;
+      $this->ingredient3 = $ingredient3;
+      $this->ingredient4 = $ingredient4;
+      $this->ingredient5 = $ingredient5;
+      $this->ingredient6 = $ingredient6;
+      $this->ingredient7 = $ingredient7;
+      $this->ingredient8 = $ingredient8;
   }
 }
 
@@ -88,11 +77,16 @@ class Orders {
 
 
   static function update($orderUpdt) {
-    $query = "UPDATE ramen SET guest=$1, typeoframen=$2, toppings=$3 WHERE id=$4";
+    $query = "UPDATE ramen SET ingredient1=$1, ingredient2=$2, ingredient3=$3, ingredient4=$4, ingredient5=$5, ingredient6=$6, ingredient7=$7, ingredient8=$8 WHERE id=$9";
     $queryParams = array(
-        $orderUpdt->guest,
-        $orderUpdt->typeoframen,
-        $orderUpdt->toppings,
+        $orderUpdt->ingredient1,
+        $orderUpdt->ingredient2,
+        $orderUpdt->ingredient3,
+        $orderUpdt->ingredient4,
+        $orderUpdt->ingredient5,
+        $orderUpdt->ingredient6,
+        $orderUpdt->ingredient7,
+        $orderUpdt->ingredient8,
         $orderUpdt->id
     );
     $result = pg_query_params($query, $queryParams);

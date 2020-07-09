@@ -130,4 +130,47 @@ body {
   cursor: pointer;
 }
 
+.orders {
+  width: 25%;
+  border: 1px solid #ccc;
+  margin: 15px 0;
+  font-family: "Bahiana", cursive;
+}
+
+.orders img {
+  width: 100%;
+}
+
+.shopping-cart {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.orders h4 {
+  margin: 0;
+}
+
+.order-flex h3 {
+  text-align: center;
+  margin: 5px 0;
+  font-family: "Bahiana", cursive;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.order-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  text-align: right;
+}
+
+.order-items {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=style.css.map */

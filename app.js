@@ -67,6 +67,52 @@ class App extends React.Component {
     }
     console.log(this.state);
   };
+  deleteOrder = (event) => {
+    axios.delete("/ramen/" + event.target.id).then(
+      (response) => {
+        this.setState({ramenBowls: response.data})
+      }
+    )
+  }
+  editItem = (event) => {
+    const idTwo = event.target.getAttribute("randattr")
+    console.log(idTwo);
+    console.log(event.target.id);
+    if (event.target.id === this.state.ingredient1) {
+      this.setState({ingredient1: "" });
+    } else if (event.target.id === this.state.ingredient2) {
+      this.setState({ ingredient2: "" });
+    } else if (event.target.id === this.state.ingredient3) {
+      this.setState({ ingredient3: "" });
+    } else if (event.target.id === this.state.ingredient4) {
+      this.setState({ ingredient4: "" });
+    } else if (event.target.id === this.state.ingredient5) {
+      this.setState({ ingredient5: "" });
+    } else if (event.target.id === this.state.ingredient6) {
+      this.setState({ ingredient6: "" });
+    } else if (event.target.id === this.state.ingredient7) {
+      this.setState({ ingredient7: ""});
+    } else if (event.target.id === this.state.ingredient8) {
+      this.setState({ ingredient8: "" });
+    }
+    axios.put("/ramen/" + idTwo,
+    {
+      ingredient1: this.state.ingredient1,
+      ingredient2: this.state.ingredient2,
+      ingredient3: this.state.ingredient3,
+      ingredient4: this.state.ingredient4,
+      ingredient5: this.state.ingredient5,
+      ingredient6: this.state.ingredient6,
+      ingredient7: this.state.ingredient7,
+      ingredient8: this.state.ingredient8,
+    }
+    ).then(
+      (response) => {
+        console.log(response);
+        this.setState({ramenBowls: response.data})
+      }
+    )
+  };
   render = () => {
     return (
       <div className="container">
@@ -144,7 +190,62 @@ class App extends React.Component {
             ) : (
               ""
             )}
+            {this.state.ingredient7 ? (
+              <h3 className="toppings">{this.state.ingredient7}</h3>
+            ) : (
+              ""
+            )}
+            {this.state.ingredient8 ? (
+              <h3 className="toppings">{this.state.ingredient8}</h3>
+            ) : (
+              ""
+            )}
           </div>
+        </div>
+        <div className="shopping-cart">
+          {
+            this.state.ramenBowls.map((bowl, index) => {
+              return <div className="orders">
+                <div className="order-flex">
+                  <h3>Order #{bowl.id}</h3>
+                  <h3 onClick={this.deleteOrder} id={bowl.id}>X</h3>
+                </div>
+                <img src="https://i.imgur.com/yEKcKDm.jpg" />
+                <div className="order-items">
+                  <h4>{bowl.ingredient1}</h4>
+                  <h4 randattr={bowl.id} id={bowl.ingredient1} onClick={this.editItem}>X</h4>
+                </div>
+                <div className="order-items">
+                  <h4>{bowl.ingredient2}</h4>
+                  <h4 randattr={bowl.id} id={bowl.ingredient2} onClick={this.editItem}>X</h4>
+                </div>
+                <div className="order-items">
+                  <h4>{bowl.ingredient3}</h4>
+                  <h4 randattr={bowl.id} id={bowl.ingredient3} onClick={this.editItem}>X</h4>
+                </div>
+                <div className="order-items">
+                  <h4>{bowl.ingredient4}</h4>
+                  <h4 randattr={bowl.id} id={bowl.ingredient4} onClick={this.editItem}>X</h4>
+                </div>
+                <div className="order-items">
+                  <h4>{bowl.ingredient5}</h4>
+                  <h4 randattr={bowl.id}  id={bowl.ingredient5} onClick={this.editItem}>X</h4>
+                </div>
+                <div className="order-items">
+                  <h4>{bowl.ingredient6}</h4>
+                  <h4 randattr={bowl.id} id={bowl.ingredient6} onClick={this.editItem}>X</h4>
+                </div>
+                <div className="order-items">
+                  <h4>{bowl.ingredient7}</h4>
+                  <h4 randattr={bowl.id} id={bowl.ingredient7} onClick={this.editItem}>X</h4>
+                </div>
+                <div className="order-items">
+                  <h4>{bowl.ingredient8}</h4>
+                  <h4 randattr={bowl.id} id={bowl.ingredient8} onClick={this.editItem}>X</h4>
+                </div>
+              </div>
+            })
+          }
         </div>
       </div>
     );
