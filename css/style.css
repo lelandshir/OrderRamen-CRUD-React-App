@@ -6,6 +6,8 @@ body {
 
 .container {
   position: relative;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .header-container {
@@ -48,7 +50,8 @@ body {
   transform: rotateY(180deg);
 }
 
-.header-front, .header-back {
+.header-front,
+.header-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -75,6 +78,7 @@ body {
   padding: 15px 0;
   box-shadow: -10px 10px 10px;
   border-radius: 5px;
+  width: 1000px;
 }
 
 .bowl img {
@@ -86,6 +90,7 @@ body {
   justify-content: space-around;
   padding: 15px;
   margin: 15px 0;
+  transform: translateY(-600px);
 }
 
 .buttons button {
@@ -101,17 +106,21 @@ body {
   justify-content: space-between;
   border-radius: 5px;
   margin: 0 20px;
+  transform: translateY(-600px);
 }
 
-.options-right, .options-left {
+.options-right,
+.options-left {
   width: 45%;
-  height: 400px;
+  height: 350px;
   border: 1px solid black;
   margin-bottom: 50px;
   overflow-y: scroll;
+  background: whitesmoke;
 }
 
-.options-left h2, .options-right h2 {
+.options-left h2,
+.options-right h2 {
   margin: 0;
   text-align: center;
   font-family: "Bahiana", cursive;
@@ -121,7 +130,7 @@ body {
 }
 
 .toppings {
-  background-color: #D08A6B;
+  background-color: #d08a6b;
   opacity: 0.8;
   margin: 0;
   padding: 20px 0;
@@ -136,6 +145,7 @@ body {
   border: 1px solid #ccc;
   margin: 15px 0;
   font-family: "Bahiana", cursive;
+  transform: translateY(-500px);
 }
 
 .orders img {
@@ -178,26 +188,17 @@ span {
   color: #ccc;
 }
 
-.pop-ups p {
-  color: black;
-  font-family: "Bahiana", cursive;
-  text-align: center;
-  font-size: 3em;
-  margin: 15px 0;
-}
-
 .pop-ups {
+  transform: translateY(-650px);
   display: flex;
   justify-content: center;
+  font-family: "Bahiana", cursive;
+  font-size: 2em;
+  margin: 0 100px;
 }
 
-.chopsticks img {
-  width: 100%;
-}
-
-.chopsticks {
-  width: 40%;
-  transform: translate(100px, -400px);
+.divl {
+  max-height: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
