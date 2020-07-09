@@ -22,7 +22,6 @@ class App extends React.Component {
   };
   componentDidMount = () => {
     axios.get("/ramen").then((response) => {
-      console.log(response);
       this.setState({ ramenBowls: response.data });
     });
   };
@@ -39,7 +38,6 @@ class App extends React.Component {
         ingredient8: this.state.ingredient8,
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           ramenBowls: response.data,
         });
@@ -108,11 +106,24 @@ class App extends React.Component {
     }
     ).then(
       (response) => {
-        console.log(response);
         this.setState({ramenBowls: response.data})
       }
     )
   };
+  clearBowl = () => {
+    this.setState(
+      {
+        ingredient1: "",
+        ingredient2: "",
+        ingredient3: "",
+        ingredient4: "",
+        ingredient5: "",
+        ingredient6: "",
+        ingredient7: "",
+        ingredient8: "",
+      }
+    )
+  }
   render = () => {
     return (
       <div className="container">
