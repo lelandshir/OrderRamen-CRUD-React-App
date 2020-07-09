@@ -67,7 +67,7 @@ class App extends React.Component {
         <div className="header-container">
           <div className="header-inner">
             <div className="header-front">
-              <h1>Ram 'n Dom</h1>
+              <h1>Ram N Dom</h1>
             </div>
             <div className="header-back">
               <h1>A ramen-building app by Leland Shirley & Bobby Tazioli</h1>
@@ -75,12 +75,14 @@ class App extends React.Component {
           </div>
         </div>
         <div className="bowl">
-          <img src="https://i.imgur.com/nHKnzHd.png"/>
+          <img src="https://i.imgur.com/nHKnzHd.png" />
         </div>
         <div className="buttons">
+
           <button id="SHO" onClick={this.createBowl}>Create A Shoyu Ramen</button>
           <button id="SHI" onClick={this.createBowl}>Create A Shio Ramen</button>
           <button id="MAI" onClick={this.createBowl}>Create A Maitake Ramen</button>
+
           <button>Clear the Bowl</button>
           <button onClick={this.finalizeOrder}>Finalize Order</button>
         </div>
@@ -104,9 +106,8 @@ class App extends React.Component {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 }
 
-
-ReactDOM.render(<App/>, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"));

@@ -29,6 +29,9 @@ class Order {
     public $ingredient7;
     public $ingredient8;
 
+
+
+
   public function __construct($id, $ingredient1, $ingredient2, $ingredient3, $ingredient4, $ingredient5, $ingredient6, $ingredient7, $ingredient8) {
       $this->id = $id;
       $this->ingredient1  = $ingredient1;
@@ -46,7 +49,6 @@ class Orders {
   //all Ramen function
   static function all(){
     $ramen = array();
-    //the rows are orders; column = prop, row items = vals
     $results = pg_query("SELECT * FROM ramen");
 
     $order = pg_fetch_object($results);
