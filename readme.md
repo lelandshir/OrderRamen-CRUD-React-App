@@ -41,8 +41,6 @@
 
 
 ## :pray: Future Features:
-- Utilize National Parks API to give the user the option to search and import that data when adding a park.
+
 
 ## :blue_book: Sources:
-- Info about the national parks for our admin account  
-[Wikipedia](https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States)
