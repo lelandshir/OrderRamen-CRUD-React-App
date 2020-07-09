@@ -107,6 +107,7 @@ body {
   height: 400px;
   border: 1px solid black;
   margin-bottom: 50px;
+  overflow-y: scroll;
 }
 
 .options-left h2, .options-right h2 {
@@ -116,6 +117,64 @@ body {
   background: #ccc;
   letter-spacing: 2px;
   border-bottom: 1px solid black;
+}
+
+.toppings {
+  background-color: #D08A6B;
+  opacity: 0.8;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  border: 1px solid black;
+  font-family: "Bahiana", cursive;
+  cursor: pointer;
+}
+
+.orders {
+  width: 25%;
+  border: 1px solid #ccc;
+  margin: 15px 0;
+  font-family: "Bahiana", cursive;
+}
+
+.orders img {
+  width: 100%;
+}
+
+.shopping-cart {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.orders h4 {
+  margin: 0;
+}
+
+.order-flex h3 {
+  text-align: center;
+  margin: 5px 0;
+  font-family: "Bahiana", cursive;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.order-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  text-align: right;
+}
+
+.order-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grey {
+  color: #ccc;
 }
 
 /*# sourceMappingURL=style.css.map */
