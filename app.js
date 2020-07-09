@@ -93,6 +93,7 @@ class App extends React.Component {
           <button id="MAI" onClick={this.createBowl}>
             Create A Maitake Ramen
           </button>
+
           <button>Clear the Bowl</button>
           <button onClick={this.finalizeOrder}>Finalize Order</button>
         </div>

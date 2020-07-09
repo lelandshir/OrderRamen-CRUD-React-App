@@ -30,10 +30,17 @@ class Order {
     public $ingredient8;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   public function __construct($id, $guest, $typeoframen, $toppings) {
 =======
   public function __construct($id, $ingredient1, $ingredient2, $ingredient3, $ingredient4, $ingredient5, $ingredient6, $ingredient7, $ingredient8) {
 >>>>>>> dc4c9e2a8330f5697f627f7313d320e5648623ac
+=======
+
+
+
+  public function __construct($id, $ingredient1, $ingredient2, $ingredient3, $ingredient4, $ingredient5, $ingredient6, $ingredient7, $ingredient8) {
+>>>>>>> 6fdb55574aa19c46e5158c7ef13cb0662f8cba2e
       $this->id = $id;
       $this->ingredient1  = $ingredient1;
       $this->$ingredient2 = $ingredient2;
