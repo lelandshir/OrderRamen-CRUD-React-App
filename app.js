@@ -69,6 +69,15 @@ class App extends React.Component {
     ingredient6: "",
     ingredient7: "",
     ingredient8: "",
+    toppingOneText: null,
+    toppingTwoText: null,
+    toppingThreeText: null,
+    toppingFourText: null,
+    toppingFiveText: null,
+    toppingSixText: null,
+    toppingSevenText: null,
+    toppingEightText: null
+
   };
   componentDidMount = () => {
     axios.get("/ramen").then((response) => {
@@ -96,21 +105,21 @@ class App extends React.Component {
   addIngredient = (event) => {
     console.log(event.target.id);
     if (event.target.id === "Pork Belly") {
-      this.setState({ ingredient1: event.target.id });
+      this.setState({ ingredient1: event.target.id, toppingOneText: "Mmm, bacon!"});
     } else if (event.target.id === "Ramen Noodles") {
-      this.setState({ ingredient2: event.target.id });
+      this.setState({ ingredient2: event.target.id, toppingTwoText: "It wouldn't be ramen without the noodles"});
     } else if (event.target.id === "Seasoned Egg") {
-      this.setState({ ingredient3: event.target.id });
+      this.setState({ ingredient3: event.target.id, toppingThreeText: "Protein!" });
     } else if (event.target.id === "Bean Sprouts") {
-      this.setState({ ingredient4: event.target.id });
+      this.setState({ ingredient4: event.target.id, toppingFourText: "Good Choice!" });
     } else if (event.target.id === "Fresh Scallions") {
-      this.setState({ ingredient5: event.target.id });
+      this.setState({ ingredient5: event.target.id, toppingFiveText: "Super fresh!" });
     } else if (event.target.id === "Bok Choy Leaves") {
-      this.setState({ ingredient6: event.target.id });
+      this.setState({ ingredient6: event.target.id, toppingSixText: "Is that enough bok choy for you?" });
     } else if (event.target.id === "Maitake Mushrooms") {
-      this.setState({ ingredient7: event.target.id });
+      this.setState({ ingredient7: event.target.id, toppingSevenText: "Earthy" });
     } else if (event.target.id === "Kanabo Spice") {
-      this.setState({ ingredient8: event.target.id });
+      this.setState({ ingredient8: event.target.id , toppingEightText: "Ooh, spicy!"});
     }
     console.log(this.state);
   };
@@ -120,25 +129,27 @@ class App extends React.Component {
     });
   };
   editItem = (event) => {
-    const idTwo = event.target.getAttribute("randattr");
-    const index = this.state.ramenBowls.findIndex((x) => x.id == idTwo);
-    const ramenB = this.state.ramenBowls;
-    if (event.target.id === this.state.ingredient1) {
-      ramenB[index].ingredient1 = "";
-    } else if (event.target.id === this.state.ingredient2) {
-      ramenB[index].ingredient2 = "";
-    } else if (event.target.id === this.state.ingredient3) {
-      ramenB[index].ingredient3 = "";
-    } else if (event.target.id === this.state.ingredient4) {
-      ramenB[index].ingredient4 = "";
-    } else if (event.target.id === this.state.ingredient5) {
-      ramenB[index].ingredient5 = "";
-    } else if (event.target.id === this.state.ingredient6) {
-      ramenB[index].ingredient6 = "";
-    } else if (event.target.id === this.state.ingredient7) {
-      ramenB[index].ingredient7 = "";
-    } else if (event.target.id === this.state.ingredient8) {
-      ramenB[index].ingredient8 = "";
+
+    const idTwo = event.target.getAttribute("randattr")
+    const index = this.state.ramenBowls.findIndex(x => x.id == idTwo)
+    const ramenB = this.state.ramenBowls
+    if (event.target.id === this.state.ingredients[0]) {
+      ramenB[index].ingredient1 = ""
+    } else if (event.target.id === this.state.ingredients[1]) {
+      ramenB[index].ingredient2 = ""
+    } else if (event.target.id === this.state.ingredients[2]) {
+      ramenB[index].ingredient3 = ""
+    } else if (event.target.id === this.state.ingredients[3]) {
+      ramenB[index].ingredient4 = ""
+    } else if (event.target.id === this.state.ingredients[4]) {
+      ramenB[index].ingredient5 = ""
+    } else if (event.target.id === this.state.ingredients[5]) {
+      ramenB[index].ingredient6 = ""
+    } else if (event.target.id === this.state.ingredients[6]) {
+      ramenB[index].ingredient7 = ""
+    } else if (event.target.id === this.state.ingredients[7]) {
+      ramenB[index].ingredient8 = ""
+
     }
     console.log(ramenB);
     axios
@@ -157,24 +168,35 @@ class App extends React.Component {
       });
   };
   clearBowl = () => {
-    this.setState({
-      ingredient1: "",
-      ingredient2: "",
-      ingredient3: "",
-      ingredient4: "",
-      ingredient5: "",
-      ingredient6: "",
-      ingredient7: "",
-      ingredient8: "",
-    });
-  };
+
+    this.setState(
+      {
+        ingredient1: "",
+        ingredient2: "",
+        ingredient3: "",
+        ingredient4: "",
+        ingredient5: "",
+        ingredient6: "",
+        ingredient7: "",
+        ingredient8: "",
+        toppingOneText: null,
+        toppingTwoText: null,
+        toppingThreeText: null,
+        toppingFourText: null,
+        toppingFiveText: null,
+        toppingSixText: null,
+        toppingSevenText: null,
+        toppingEightText: null
+      }
+    )
+  }
   render = () => {
     return (
       <div className="container">
         <div className="header-container">
           <div className="header-inner">
             <div className="header-front">
-              <h1>Ram N Dom</h1>
+              <h1>Ramen Dom</h1>
             </div>
             <div className="header-back">
               <h1>A ramen-building app by Leland Shirley & Bobby Tazioli</h1>
@@ -184,8 +206,18 @@ class App extends React.Component {
         <div className="bowl">
           <Toppings />
         </div>
+        <div className="pop-ups">
+        { this.state.toppingOneText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s" id="pop1" >{this.state.toppingOneText}</p> }
+        { this.state.toppingTwoText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s"  id="pop2">{this.state.toppingTwoText}</p> }
+        { this.state.toppingThreeText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s" id="pop3">{this.state.toppingThreeText}</p> }
+        { this.state.toppingFourText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s" id="pop4">{this.state.toppingFourText}</p> }
+        { this.state.toppingFiveText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s" id="pop5">{this.state.toppingFiveText}</p> }
+        { this.state.toppingSixText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s" id="pop6">{this.state.toppingSixText}</p> }
+        { this.state.toppingSevenText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s" id="pop7">{this.state.toppingSevenText}</p> }
+        { this.state.toppingEightText && <p className="animate__animated animate__fadeOutTopRight animate__delay-1s" id="pop8">{this.state.toppingEightText}</p> }
+        </div>
         <div className="buttons">
-          <button>Clear the Bowl</button>
+          <button onClick={this.clearBowl}>Clear the Bowl</button>
           <button onClick={this.finalizeOrder}>Finalize Order</button>
         </div>
         <div className="ingredients">
