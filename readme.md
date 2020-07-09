@@ -31,16 +31,16 @@
 ## :sparkles: Want to make your own improvements?
 - Visit our [Github](https://github.com/lelandshir/ramen-app)
 - Clone or download the repository
-- Open the project in terminal and your text editor of choice
-
-
-## :dancer: Wins:
+- Open the project text editor of choice and start up postgresSQL
+- Create a data table in psql: ```CREATE TABLE ramen (id SERIAL, ingredient1 TEXT, ingredient2 TEXT, ingredient3 TEXT, ingredient4 TEXT, ingredient5 TEXT, ingredient6 TEXT, ingredient7 TEXT, ingredient8 TEXT)```
 
 
 ## :sweat: Challenges:
+- Adding more complex datasets to SQL. We would have liked to create an array of all the ingredients rather than having them all as separate columns.
 
 
 ## :pray: Future Features:
-
+- Upon click of ingredient, the specific ingredient gets added to bowl.
+- More mobile responsiveness.
 
 ## :blue_book: Sources:
