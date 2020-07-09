@@ -93,6 +93,7 @@ body {
   border: 1px solid black;
   font-family: "Bahiana", cursive;
   border-radius: 5px;
+  font-size: 2.5em;
 }
 
 .ingredients {
@@ -175,6 +176,28 @@ span {
 
 .grey {
   color: #ccc;
+}
+
+.pop-ups p {
+  color: black;
+  font-family: "Bahiana", cursive;
+  text-align: center;
+  font-size: 3em;
+  margin: 15px 0;
+}
+
+.pop-ups {
+  display: flex;
+  justify-content: center;
+}
+
+.chopsticks img {
+  width: 100%;
+}
+
+.chopsticks {
+  width: 40%;
+  transform: translate(100px, -400px);
 }
 
 /*# sourceMappingURL=style.css.map */

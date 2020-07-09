@@ -8,6 +8,7 @@ $main-font: 'Bahiana', cursive;
   // border: 1px solid gold;
 }
 
+
 body {
   margin: 0;
   padding: 0;
@@ -107,6 +108,7 @@ body {
   border: 1px solid black;
   font-family: $main-font;
   border-radius: 5px;
+  font-size: 2.5em;
 }
 
 
@@ -197,3 +199,25 @@ body {
  .grey {
    color: #ccc;
  }
+
+ .pop-ups p {
+   color: black;
+   font-family: $main-font;
+   text-align: center;
+   font-size: 3em;
+   margin: 15px 0;
+ }
+
+ .pop-ups {
+   display: flex;
+   justify-content: center;
+ }
+
+ .chopsticks img {
+   width: 100%
+ }
+
+.chopsticks {
+  width: 40%;
+  transform: translate(100px, -400px);
+}
