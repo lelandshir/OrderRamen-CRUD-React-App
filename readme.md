@@ -42,5 +42,3 @@
 ## :pray: Future Features:
 - Upon click of ingredient, the specific ingredient gets added to bowl.
 - More mobile responsiveness.
-
-## :blue_book: Sources:
