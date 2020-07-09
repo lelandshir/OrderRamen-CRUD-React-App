@@ -49,9 +49,6 @@ class Toppings extends React.Component {
 }
 
 class App extends React.Component {
-  // style = {
-  //   bowl: { transform: "translate(500px, 0px)" },
-  // };
   state = {
     ingredients: [
       "Pork Belly",
